@@ -1,13 +1,26 @@
 \documentclass{article} 
 \usepackage{amsthm}
+\usepackage{amsmath}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{defination}{Definition}[section]
 \begin{document} 
 
-\section{The Collision Probability ofY Set} 
+\section{The Collision Probability of Y Set}
 \paragraph{Glossary} The symbol, abbreviation and marks needed in
 expressing the shift stage and probability computation.
+\paragraph{Replay Attack and Y Set Collision}
+In replay attack, the adversary replace a data-tag pair on the memory with a pair copied from the same address at an old time point. That means for the two pairs at different time point, the two message block sets and related tags are identical respectly, while the shift bit parameter set R\_A and R\_B are randomly generated and the equality is unpredictable if their generator is of high quality.
+In this senario, the probability of a successful attack can be expressed as the equation 1.1:
+\begin{defination}
+Pr[Successful Replay Attack] = Pr[Tag$_a$ = Tag$_b$ $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
+							 = Pr[Y\_A = Y\_B $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
+\end{defination} 
+
+We can see that the collision of Y set will directly leads to the collision of tag and cause the succeed of replay attack. Hence the Y set is the output of rotate shifting stage in CETD, we will analyze the properties of block rotate shifting and the cases of input sets that can result Y set collision.
+
 \subsection{Preliminaries} 
+\paragraph{What to say in this section}
 \paragraph{Rotate Shifting} 
 This paragraph introduce the mechanism of block rotate shifting stage in CETD.  
 \begin{itemize} 
@@ -31,6 +44,7 @@ the R$_i$s of two message blocks are identical, the equality of result blocks
 is same as the equality of their input blocks.
 
 \subsection{Rotate Shifting and Y Set Collision} 
+\paragraph{What to say in this section}
 \paragraph{Y Set Collision}
 This paragraph should introduce some simple examples of Y Set Collision,
 explain in detail that what kind of input pair can cause Y set collision.
@@ -42,28 +56,20 @@ pair(shifting base and the effect on Y set)
 	\item A special case, blks
 containing internal pattern and derived from same base.  
 \end{itemize}
-\paragraph{Replay Attack} 
-In the context of this paper, replay attack refers to the circumstances that the
-adversary copy the data-tag message block pair from
-memory at an old time point and try to pass the verification with this old copy
-at a new time point. In the scenario of replay attack , the data part and tag
-part of two message block pairs are identical respectively. 
-The security of a
-tag generation design is evaluated by the probabilty that two tags equal when
-their relative data parts are identical. This probability is expressed as
-Pr[Tag Collision] in this paper.  Figure x shows the status of each stage in
-CETD under replay attack. In this section , we analyze the behaviour of old and
-new Y set. (figure show two CETD scheme, representing old and new data) 
 \subsubsection{Y Set Collision Under Replay Attack}
-\paragraph{Single Block Collision}
+
+\paragraph{Single Block Collision Case}
 As shown in Figure 2(a), two identical X blocks can result two identical Y blocks while their relative R$i$ are distinct. We found that the identical X block pair X$_a$=X$_b$ resulting identical Y blocks with distinct R$i$s have a common property, this property is expressed in Theorem 1.
 \begin{theorem}
 Assume the two identical X blocks have same number of bits N=2$^n$. The result blocks Y$_a$ and Y$_b$ from rotate shifting two identical X blocks X$_a$=X$_b$ with distinct R$_a$ and R$_b$, can be identical only when X$_a$ is formed by repeating a binary pattern P, which is a binary segment. The length of this pattern P can be expressed as:
 
 	P\_L = 2$^p$, p$\in$[0,n-1]
 \end{theorem}
-
-\paragraph{The Collision of Block Set}
+The single block equality of two Y sets is defined in Defination 1.2:
+\begin{defination}
+Assume there are M elements in each Y set, single block equality means Y\_A[i] = Y\_B[i] for all i$\in$[1,m]
+\end{defination} 
+\paragraph{Block Set Collision Case}
 From Figure 2(b) we can see that two distinct X block X$_a$ and X$_b$ can result two identical Y blocks Y$_a$=Y$_b$ when the relative R$_a$ $\neq$ R$_b$. Assume there are two identical X block sets X\_A and X\_B and the number of elements in each set is M. X\_A[i] = X\_B[i] for all i$\in$ [1,m] and none of the element is formed with pattern. We found that the result Y sets Y\_A and Y\_B can be identical in set level.  These two X sets resulting two set level identical Y sets have a common property. This property is expressed in Theorem 2.
 
 \begin{theorem}
@@ -72,11 +78,16 @@ Assume the two X block set X\_A and X\_B have same number of element and this nu
 	All the elements in X\_A are formed by shifting a base block X$_{base}$. 
 \end{theorem}
 \begin{corollary}
+	If none of any two elements in X set are shifted from a same base block, the Y set collision is single block equality.
+\end{corollary}
+\begin{corollary}
 	If each element in the X sets discussed in Theorem 1.2 is formed by binary pattern discussed in Theorem 1.1, the result set Y\_A and Y\_B can be identical in both set level and block level.
 \end{corollary}
-The proof of Theorem 1 and Theorem can be refered in appendix.
+The proof of Theorem 1.1 and Theorem 1.2 can be refered in appendix.
+At the end of this section, add a group of figures of three cases.
+
 \subsection{The Y Set Collision in Each Case Of Input} 
-As discussed in Section x, 
+\paragraph{what to say in this section}
 \paragraph{Probability of Y Set Collision} 
 This section should compute the Y set collision probability
 under replay attack for each input case.  
@@ -85,9 +96,57 @@ under replay attack for each input case.
 	\item The Probability of Y set pair collision for each case of X set pair.  
 	\item A general case of X set pair and the related Y set collision probability 
 \end{itemize} 
+
+Hence the shift bit parameter set R\_A and R\_B are randomly generated, the probability of Y set collision for each input case is determined by the number of specific combinations of R\_A and R\_B. The computation of Pr[Y\_A = Y\_B] is based on this idea.
+
+\subsubsection{Single Block Collision only Case}
+\paragraph{what to say in this section}
+\paragraph{The Probability of Two Identical Y Block}
+As discussed in above section, if each element in the X set is formed by a pattern P with pattern lentgh P$_l$= 2$^p$ and none of the element can be formed by rotate shifting the left elements, the result Y sets Y\_A and Y\_B have probability of Single Block Equality(SBE). This probability can be expressed as the following way:
+\begin{defination}
+Pr[SBE] = $$\prod_{i=1}^M Pr[Y\_A[i] = Y\_B[i]]$$ M is the No. of elements in a set
+\end{defination} 
+Assume the shuffle stage of CETD does not work. That means D\_A[i]=X\_A[i]=X\_B[i]=D\_B[i] for all i$\in$[1,M]. Then Pr[Y\_A[i] = Y\_B[i]] can be expressed as Pr[Y\_A[i] = Y\_B[i] | X\_A[i] = X\_B[i] \& R\_A and R\_B are randomly generated]. We use Pr[Y block collision] to express this probability. 
+
+If R\_A[i] = R\_B[i] for all i$\in$[1,M], then Pr[Y\_A[i] = Y\_B[i]] = 1. When R\_A and R\_B is distinct, then at least one R\_A[i]-R\_A[i] pair int two R sets is distinct. For a distinct R block pair, their related Y block pair can be identical when the related X pair is formed by pattern. The probability is expressed in Theorem 1.3:
+\begin{theorem}
+If the No. of bits of each block in X\_A[i]-X\_B[i] pair is N=2$^n$, the pattern length P$_l$=2$^p$ where p$\in$[0,n-1]. The pattern contains no internal sub-pattern, then Pr[Y block collision] = 1/2$^p$
+\end{theorem}
+If each X set contains M elements, Pr[SBE] = (1/2$^p$)$^M$.
+The proof of theorem can be refered in appendix.
+
+\subsubsection{Block Set Collision only Case}
+\paragraph{What to say in this section}
+\begin{itemize}
+	\item In general condition, Y\_A and Y\_B are multisets. If Y\_A and Y\_B are identical in set level, then Y\_B is a permutation of Y\_A.
+	\item how to make two identical Y block with two distinct X block and R block: if there is no pattern, for each value of block, the responding Y block is definite. 1 r map to 1 Y value
+	\item How to represent the expression of Pr[set level collision $\mid$ X collision \& R distinct]
+	\item If Y\_A is identical to Y\_B in set level, element in Y\_B can be regarded as a multiset permutation of set Y\_A.
+\end{itemize}
+
+If an element in an X set, marked as X[i], can be formed by rotate shifting another element in X, marked as X[i] where i$\neq$j, then we call these two block "same base element". Two same base elements can result two identical Y blocks with distinct shifting bit R[i]$\neq$R[j]. 
+
+When none of an element in a X set contains a pattern, we call this X set a no-pattern set. Assume X\_A and X\_B are two identical no-pattern sets. It is impossible to two distinct R sets on X\_A and X\_B to form two single-block-equality Y sets . However, if there is some elements in X\_A set are same base elemnts, Y\_A and Y\_B can have Set Level Equality(SLE). 
+
+Assume all elements in X\_A set are same base elments. 
+
+
+
+\subsubsection{Intersection of the Two Cases}
+\paragraph{What to say in this section}
+\begin{itemize}
+	\item If there is pattern in the block, for each element, the mapping between r and Y is not 1-to-1.
+	\item Compute set level equality first, then solve the severl r to 1 Y problem
+	\item express the Probability with combinatorics
+\end{itemize}
+\subsubsection{A General Condition of X Set}
+\paragraph{what to say in this section}
 \appendix
 \section{Proof of Theorem 1.1 and Theorem 1.2}
 \subsection{Proof of Theorem 1}
 \subsection{Proof of Theorem 2}
-\section{}
+\section{Proof of Theorem 1.3}
+\section{Proof of Theorem 1.4 and 1.5}
+\subsection{Proof of Theorem 1.4}
+\subsection{Proof of Theorem 1.5}
 \end{document}
