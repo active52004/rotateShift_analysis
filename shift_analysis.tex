@@ -1,106 +1,169 @@
 \documentclass{article} 
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+%\usepackage{subfig}
+\usepackage{verbatim}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{defination}{Definition}[section]
 \begin{document} 
-
 \section{The Collision Probability of Y Set}
 \paragraph{Glossary} The symbol, abbreviation and marks needed in
 expressing the shift stage and probability computation.
+
 \paragraph{Replay Attack and Y Set Collision}
-In replay attack, the adversary replace a data-tag pair on the memory with a pair copied from the same address at an old time point. That means for the two pairs at different time point, the two message block sets and related tags are identical respectly, while the shift bit parameter set R\_A and R\_B are randomly generated and the equality is unpredictable if their generator is of high quality.
-In this senario, the probability of a successful attack can be expressed as the equation 1.1:
+In replay attack, the adversary replace a data-tag pair on the memory with a
+pair copied from the same address at an old time point. That means for the two
+pairs at different time point, the two message block sets and related tags are
+identical respectively, while the nonce N$_A$ and N$_B$ are randomly generated and
+the equality is unpredictable if their generator is of high quality.  That means
+the shifting bits parameter segment on the nonce R\_A and R\_B, are randomly
+generated.
+
+In this scenario, the probability of a successful attack can be expressed as the equation 1.1:
 \begin{defination}
 Pr[Successful Replay Attack] = Pr[Tag$_a$ = Tag$_b$ $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
 							 = Pr[Y\_A = Y\_B $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
 \end{defination} 
 
-We can see that the collision of Y set will directly leads to the collision of tag and cause the succeed of replay attack. Hence the Y set is the output of rotate shifting stage in CETD, we will analyze the properties of block rotate shifting and the cases of input sets that can result Y set collision.
+We can see that the collision of Y set will directly leads to the collision of tag and cause the succeed of replay attack. 
+For easy understanding, we assume the shuffle stage does not work at first, which means D\_A = X\_A = D\_B = X\_B. Hence the Y set is the output of rotate shifting stage in CETD, we will analyze the properties of block rotate shifting and the cases of input sets that can result Y set collision. 
 
-\subsection{Preliminaries} 
-\paragraph{What to say in this section}
-\paragraph{Rotate Shifting} 
-This paragraph introduce the mechanism of block rotate shifting stage in CETD.  
-\begin{itemize} 
-	\item rotate shifting is like whirling a wheel.  
-	\item the output blk of rotate shifting is determined by the input blk and
-the shift control parameter(No. of bits shifted) 
-	\item The value of input and output blks may not be 1-1 map.
-\end{itemize} 
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[scale=0.4]{./diagrams/rotate_right.pdf}
+ \caption{The Concept of Rotate Shifting(Right)}
+ \label{fig:1 }
+\end{figure}
+
+\paragraph{Rotate Shifting Introduction} 
 Unlike logical shifting and arithmetic shifting, rotate shifting
 behaves like whirling a wheel. The empty position in a message blk shifted is
-filled by the bits shifted out. Figure 1 express the concept of rotate shift. 
+filled by the bits shifted out. Figure 1 express the concept of rotate shift.
 
-We can refer that the result of rotate shifting a message blk depends on the
+
+We can refer that the result of rotate shifting a message block depends on the
 value of blk and the bits shifted.  If two message blocks whose value are
 identical are shifted with distinct R$_i$s, the result blocks may be
 identical.That means when R$_i$ fixed,the mapping from message blocks to the
 shifted result blocks is not injection. This case is expressed in Figure 2(a).
+
 For two distinct message blocks, however, their result blocks may be identical
-when their R$_i$s are distinct. This case is expressed in Figure 2(b).  When
-the R$_i$s of two message blocks are identical, the equality of result blocks
-is same as the equality of their input blocks.
+when their R$_i$s are distinct. This case is expressed in Figure 2(b).  
+When the R$_i$s of two message blocks are identical, the equality of result blocks
+is same as the equality of their input blocks.				
+
+\begin{figure}
+\centering
+\subfigure[Same Block Shifted Different Bits]{
+\begin{minipage}[b]{0.45\textwidth}
+\includegraphics[width=1\textwidth]{./diagrams/r_s_2bits.pdf} \\
+\includegraphics[width=1\textwidth]{./diagrams/r_s_6bits.pdf}
+\end{minipage}
+}
+\subfigure[Different Blocks Shifted Different Bits]{
+\begin{minipage}[b]{0.45\textwidth}
+\includegraphics[width=1\textwidth]{./diagrams/r_d_4bits.pdf} \\
+\includegraphics[width=1\textwidth]{./diagrams/r_d_2bits.pdf}
+\end{minipage}
+}
+ \caption{The Examples of Y Block Collision}
+ \label{fig:2 }
+\end{figure}
+
+
+\begin{figure}
+\centering
+\subfigure[Only Single Block Equality]{
+ \label{fig:y_single_e} %% label for first subfigure
+\includegraphics[width=.5\textwidth]{./diagrams/y_single_equality.pdf}
+}
+%\hspace{1in}
+\subfigure[Only Set Level Equality]{
+\label{fig:y_set_e} %% label for second subfigure
+\includegraphics[width=.5\textwidth]{./diagrams/y_set_equality.pdf}
+}
+\caption{X Set Pairs with Only One Type of Y Equality}
+ \label{fig:y_e_single} %% label for entire figure
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[Single Block Equality Case]{
+ \label{fig:y_both_single} %% label for first subfigure
+\includegraphics[width=.5\textwidth]{./diagrams/y_both_single.pdf}
+}
+%\hspace{1in}
+\subfigure[Set Level Equality Case]{
+\label{fig:y_both_set} %% label for second subfigure
+\includegraphics[width=.5\textwidth]{./diagrams/y_both_set.pdf}
+}
+\caption{A X Set Pair with Two Types of Y Equality}
+ \label{fig:y_both} %% label for entire figure
+\end{figure}
 
 \subsection{Rotate Shifting and Y Set Collision} 
-\paragraph{What to say in this section}
-\paragraph{Y Set Collision}
-This paragraph should introduce some simple examples of Y Set Collision,
-explain in detail that what kind of input pair can cause Y set collision.
-\begin{itemize} 
-	\item The blk-pair equality is maintained:(pattern and single
-block collision) 
-	\item Two distinctive blks produce an identical blk
-pair(shifting base and the effect on Y set) 
-	\item A special case, blks
-containing internal pattern and derived from same base.  
+Assume the shuffle stage does not work, then D\_A= X\_A=D\_B=X\_B,which means the following properties exist in X\_A and X\_B:
+\begin{itemize}
+	\item X\_A[i] = X\_B[i] for all i$\in$[1,M], M is the number of elements
+	\item The equality of elements in a X set is uncertain.
 \end{itemize}
-\subsubsection{Y Set Collision Under Replay Attack}
+All the analysis in this section is based on the assumption that shuffle stage does not work.
+If these two X sets generate two identical Y sets with distinct R\_A and R\_B, then the two Y sets contains  at least one of the following properties:
+\begin{itemize}
+	\item Single Block Equality: Y\_A[i] = Y\_B[i] for all i$\in$[1,M] where M is the number of element
+	\item Set Level Equality: Any element in Y\_A, marked as Y\_A[i], is identical to an element in Y\_B, marked as Y\_B[j] and i$\neq$j.
+\end{itemize}
+Figure 3 and Figure 4 express the examples of X set pair that lead to idential Y set pair with distinct R set pair. In this paper, we analyze the cases of the input set pair (X\_A and X\_B) of shifting stage in CETD under replay attack that can lead to Y set pair collision.
 
-\paragraph{Single Block Collision Case}
-As shown in Figure 2(a), two identical X blocks can result two identical Y blocks while their relative R$i$ are distinct. We found that the identical X block pair X$_a$=X$_b$ resulting identical Y blocks with distinct R$i$s have a common property, this property is expressed in Theorem 1.
+
+
+\subsubsection{Case of X Sets Resulting Y Set Collision}
+\paragraph{Single Block Equality Case}
+As shown in Figure 2(a), two identical X blocks can result two identical Y blocks while their relative shifting bit parameter R[i] and R[j] are distinct. 
+We found that the identical X block pair X\_A[i]=X\_B[i] resulting identical Y blocks with distinct R\_A[i] and R\_B[i] have a common property, this property is expressed in Theorem 1.
+
 \begin{theorem}
-Assume the two identical X blocks have same number of bits N=2$^n$. The result blocks Y$_a$ and Y$_b$ from rotate shifting two identical X blocks X$_a$=X$_b$ with distinct R$_a$ and R$_b$, can be identical only when X$_a$ is formed by repeating a binary pattern P, which is a binary segment. The length of this pattern P can be expressed as:
+Assume X\_A[i] and X\_B[i] are two identical block from two set X\_A and X\_B with same index i. X\_A[i] and X\_B[i] have same number of bits N=2$^n$. The result of rotate shifting X\_A[i] and X\_B[i] with distinct shifting bit parameter R\_A[i] and R\_B[i] are marked as Y\_A[i] and Y\_B[i]. Then Y\_A[i] and Y\_B[i] can be identical only when X\_A[i] and X\_B[i] are formed by repeating a binary pattern P, which is a binary segment. The length of this pattern P can be expressed as:
 
 	P\_L = 2$^p$, p$\in$[0,n-1]
 \end{theorem}
-The single block equality of two Y sets is defined in Defination 1.2:
-\begin{defination}
-Assume there are M elements in each Y set, single block equality means Y\_A[i] = Y\_B[i] for all i$\in$[1,m]
-\end{defination} 
-\paragraph{Block Set Collision Case}
-From Figure 2(b) we can see that two distinct X block X$_a$ and X$_b$ can result two identical Y blocks Y$_a$=Y$_b$ when the relative R$_a$ $\neq$ R$_b$. Assume there are two identical X block sets X\_A and X\_B and the number of elements in each set is M. X\_A[i] = X\_B[i] for all i$\in$ [1,m] and none of the element is formed with pattern. We found that the result Y sets Y\_A and Y\_B can be identical in set level.  These two X sets resulting two set level identical Y sets have a common property. This property is expressed in Theorem 2.
+
+Assume the two X sets X\_A and X\_B are identical and can  form single block equality. Base on Theorem 1.1, we can conclude the corollary of the relationship between X set pair and Y set pair for single block case. 
+\begin{corollary}
+Assume there is M elements in X\_A and X\_B. If there is at least one i$\in$[1,M], X\_A[i] = X\_B[i] is formed by repeating a pattern P$_i$ whose length is P\_L$_i$ = 2$^pi$, then Y\_A and Y\_B can be single block identical with some two distinct shifting bits parameter sets R\_A and R\_B.
+\end{corollary} 
+
+\paragraph{Set Level Equality Case}
+From Figure 2(b) we can see that two distinct X block X\_A[i] and X\_B[j] can result two identical Y blocks Y\_A[i]=Y\_B[j] when the relative R\_A[i] $\neq$ R\_B[j]. 
+
+Assume the element in a set with distinct indexes are distinct. We found that two distinct blocks X\_A[i] and X\_B[j] resulting identical Y blocks with distinct R\_A[i] and R\_B[i] have a common property. This property is expressed in Theorem 2.
 
 \begin{theorem}
-Assume the two X block set X\_A and X\_B have same number of element and this number is M. X\_A[i]=X\_B[i] for all i$\in$[1,m] and none of the element has pattern discussed in Theorem 1.1. Given two set level distinct shifting parameter sets R\_A and R\_B, the result sets Y\_A and Y\_B can be identical in set level if and only if:
-	
-	All the elements in X\_A are formed by shifting a base block X$_{base}$. 
+Assume X\_A[i] and X\_B[j] are two distinct blocks from two set X\_A and X\_B and i$\neq$j. X\_A[i] and X\_B[i] have same number of bits N=2$^n$. 
+The result of rotate shifting X\_A[i] and X\_B[j] with distinct shifting bit parameter R\_A[i] and R\_B[i] are marked as Y\_A[i] and Y\_B[i]. 
+
+Then Y\_A[i] and Y\_B[i] can be identical only when X\_A[i] can be rotate shifted to X\_B[i]
 \end{theorem}
-\begin{corollary}
-	If none of any two elements in X set are shifted from a same base block, the Y set collision is single block equality.
-\end{corollary}
-\begin{corollary}
-	If each element in the X sets discussed in Theorem 1.2 is formed by binary pattern discussed in Theorem 1.1, the result set Y\_A and Y\_B can be identical in both set level and block level.
-\end{corollary}
-The proof of Theorem 1.1 and Theorem 1.2 can be refered in appendix.
-At the end of this section, add a group of figures of three cases.
 
-\subsection{The Y Set Collision in Each Case Of Input} 
-\paragraph{what to say in this section}
-\paragraph{Probability of Y Set Collision} 
-This section should compute the Y set collision probability
-under replay attack for each input case.  
-\begin{itemize} 
-	\item The condition of X set pair under replay attack: Xa[i] = Xb[i] 
-	\item The Probability of Y set pair collision for each case of X set pair.  
-	\item A general case of X set pair and the related Y set collision probability 
-\end{itemize} 
+Assume the two X sets X\_A and X\_B are identical and can form set level equality. Base on Theorem 1.2, we can conclude the corollary of the relationship between X set pair and Y set pair for set level equality. 
+\begin{corollary}
+Assume there are M elements in X\_A and X\_B. If there is at least two pairs of data, marked as (X\_A[i],X\_B[j]) and (X\_A[j]),X\_B[i]) where i,j$\in$[1,M] and i$\neq$j, that X\_A[i] can be formed by shifting X\_A[j], then Y\_A and Y\_B can be set level identical with some two distinct shifting bits parameter sets R\_A and R\_B.
+\end{corollary} 
+\paragraph{An Intersection Case}
+Base on Corollary 1.3 and Corollary 1.4, we can draw the following corollary for the X set pairs that can form both set level and single block equality:
+\begin{corollary}
+Assume there is M elements in X\_A and X\_B. If there are at least two pairs of data, marked as (X\_A[i],X\_B[j]) and (X\_A[j]),X\_B[i]) where i,j$\in$[1,M] and i$\neq$j, that X\_A[i] can be formed by shifting X\_A[j] and X\_A[i] = X\_B[i] or X\_A[j]=X\_B[j] is formed by repeating a pattern P$_i$ whose length is P\_L$_i$ = 2$^pi$ , then Y\_A and Y\_B can be either set level or single block identical with some two distinct shifting bits parameter sets R\_A and R\_B.
+\end{corollary}
+The proof of Theorem 1.1 and Theorem 1.2 and Corollary 1.2 to 1.5 can be refered in appendix.
 
+
+\subsection{The Probability of Y Set Collision} 
 Hence the shift bit parameter set R\_A and R\_B are randomly generated, the probability of Y set collision for each input case is determined by the number of specific combinations of R\_A and R\_B. The computation of Pr[Y\_A = Y\_B] is based on this idea.
 
-\subsubsection{Single Block Collision only Case}
-\paragraph{what to say in this section}
+\subsubsection{Single Block Equality Case}
 \paragraph{The Probability of Two Identical Y Block}
 As discussed in above section, if each element in the X set is formed by a pattern P with pattern lentgh P$_l$= 2$^p$ and none of the element can be formed by rotate shifting the left elements, the result Y sets Y\_A and Y\_B have probability of Single Block Equality(SBE). This probability can be expressed as the following way:
 \begin{defination}
@@ -113,9 +176,9 @@ If R\_A[i] = R\_B[i] for all i$\in$[1,M], then Pr[Y\_A[i] = Y\_B[i]] = 1. When R
 If the No. of bits of each block in X\_A[i]-X\_B[i] pair is N=2$^n$, the pattern length P$_l$=2$^p$ where p$\in$[0,n-1]. The pattern contains no internal sub-pattern, then Pr[Y block collision] = 1/2$^p$
 \end{theorem}
 If each X set contains M elements, Pr[SBE] = (1/2$^p$)$^M$.
-The proof of theorem can be refered in appendix.
+The proof of theorem can be referred in appendix.
 
-\subsubsection{Block Set Collision only Case}
+\subsubsection{Set Level Equality Case}
 \paragraph{What to say in this section}
 \begin{itemize}
 	\item In general condition, Y\_A and Y\_B are multisets. If Y\_A and Y\_B are identical in set level, then Y\_B is a permutation of Y\_A.
@@ -132,15 +195,18 @@ Assume all elements in X\_A set are same base elments.
 
 
 
-\subsubsection{Intersection of the Two Cases}
+\subsubsection{The Intersection Case}
 \paragraph{What to say in this section}
 \begin{itemize}
 	\item If there is pattern in the block, for each element, the mapping between r and Y is not 1-to-1.
 	\item Compute set level equality first, then solve the severl r to 1 Y problem
 	\item express the Probability with combinatorics
 \end{itemize}
-\subsubsection{A General Condition of X Set}
+
+\subsection{A General Condition of X Set and Related Y Set Collision}
 \paragraph{what to say in this section}
+
+
 \appendix
 \section{Proof of Theorem 1.1 and Theorem 1.2}
 \subsection{Proof of Theorem 1}

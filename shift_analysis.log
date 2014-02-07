@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 FEB 2014 11:08
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  7 FEB 2014 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -103,55 +103,236 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-\c@theorem=\count99
-\c@defination=\count100
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip49
+\subfigcapskip=\skip50
+\subfigcaptopadj=\dimen114
+\subfigbottomskip=\skip51
+\subfigcapmargin=\dimen115
+\subfiglabelskip=\skip52
+\c@subfigure=\count100
+\c@lofdepth=\count101
+\c@subtable=\count102
+\c@lotdepth=\count103
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip53
+\subfig@bottom=\skip54
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks26
+\verbatim@line=\toks27
+\verbatim@in@stream=\read1
+)
+\c@theorem=\count104
+\c@defination=\count105
 
 (./shift_analysis.aux)
 \openout1 = `shift_analysis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count106
+\scratchdimen=\dimen116
+\scratchbox=\box28
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen117
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+<./diagrams/rotate_right.pdf, id=1, 501.875pt x 401.5pt>
+File: ./diagrams/rotate_right.pdf Graphic file (type pdf)
+
+<use ./diagrams/rotate_right.pdf>
+Package pdftex.def Info: ./diagrams/rotate_right.pdf used on input line 36.
+(pdftex.def)             Requested size: 200.74643pt x 160.59715pt.
+ [1
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./diagr
+ams/rotate_right.pdf>]
+<./diagrams/r_s_2bits.pdf, id=23, 553.06625pt x 306.14375pt>
+File: ./diagrams/r_s_2bits.pdf Graphic file (type pdf)
+
+<use ./diagrams/r_s_2bits.pdf>
+Package pdftex.def Info: ./diagrams/r_s_2bits.pdf used on input line 65.
+(pdftex.def)             Requested size: 155.24895pt x 85.93454pt.
+
+<./diagrams/r_s_6bits.pdf, id=24, 553.06625pt x 306.14375pt>
+File: ./diagrams/r_s_6bits.pdf Graphic file (type pdf)
+
+<use ./diagrams/r_s_6bits.pdf>
+Package pdftex.def Info: ./diagrams/r_s_6bits.pdf used on input line 65.
+(pdftex.def)             Requested size: 155.24895pt x 85.93454pt.
+
+<./diagrams/r_d_4bits.pdf, id=25, 562.1pt x 306.14375pt>
+File: ./diagrams/r_d_4bits.pdf Graphic file (type pdf)
+
+<use ./diagrams/r_d_4bits.pdf>
+Package pdftex.def Info: ./diagrams/r_d_4bits.pdf used on input line 71.
+(pdftex.def)             Requested size: 155.24895pt x 84.55182pt.
+
+<./diagrams/r_d_2bits.pdf, id=26, 562.1pt x 306.14375pt>
+File: ./diagrams/r_d_2bits.pdf Graphic file (type pdf)
+
+<use ./diagrams/r_d_2bits.pdf>
+Package pdftex.def Info: ./diagrams/r_d_2bits.pdf used on input line 71.
+(pdftex.def)             Requested size: 155.24895pt x 84.55182pt.
+
+<./diagrams/y_single_equality.pdf, id=27, 469.755pt x 170.6375pt>
+File: ./diagrams/y_single_equality.pdf Graphic file (type pdf)
+
+<use ./diagrams/y_single_equality.pdf>
+Package pdftex.def Info: ./diagrams/y_single_equality.pdf used on input line 82
+.
+(pdftex.def)             Requested size: 172.5pt x 62.6584pt.
+
+<./diagrams/y_set_equality.pdf, id=28, 469.755pt x 180.675pt>
+File: ./diagrams/y_set_equality.pdf Graphic file (type pdf)
+
+<use ./diagrams/y_set_equality.pdf>
+Package pdftex.def Info: ./diagrams/y_set_equality.pdf used on input line 87.
+(pdftex.def)             Requested size: 172.5pt x 66.34418pt.
+
+<./diagrams/y_both_single.pdf, id=29, 469.755pt x 170.6375pt>
+File: ./diagrams/y_both_single.pdf Graphic file (type pdf)
+
+<use ./diagrams/y_both_single.pdf>
+Package pdftex.def Info: ./diagrams/y_both_single.pdf used on input line 97.
+(pdftex.def)             Requested size: 172.5pt x 62.6584pt.
+
+<./diagrams/y_both_set.pdf, id=30, 469.755pt x 186.6975pt>
+File: ./diagrams/y_both_set.pdf Graphic file (type pdf)
+
+<use ./diagrams/y_both_set.pdf>
+Package pdftex.def Info: ./diagrams/y_both_set.pdf used on input line 102.
+(pdftex.def)             Requested size: 172.5pt x 68.55566pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 110.
+
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
-
-Overfull \hbox (5.5285pt too wide) in paragraph at lines 32--35
-\OT1/cmr/m/n/10 Unlike log-i-cal shift-ing and arith-metic shift-ing, ro-tate s
-hift-ing be-haves like whirling
- []
-
-[1
-
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-Overfull \hbox (67.72371pt too wide) in paragraph at lines 109--110
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 110.
+ [2 <./diagrams/r_s_2bits.pdf> <./diagrams/r_s_6bits.pdf> <./diagrams/r_d_4bits
+.pdf> <./diagrams/r_d_2bits.pdf>] [3 <./diagrams/y_single_equality.pdf> <./diag
+rams/y_set_equality.pdf> <./diagrams/y_both_single.pdf> <./diagrams/y_both_set.
+pdf>] [4]
+Overfull \hbox (67.72371pt too wide) in paragraph at lines 172--173
 []\OT1/cmr/m/n/10 Assume the shuf-fle stage of CETD does not work. That means D
 []A[i]=X[]A[i]=X[]B[i]=D[]B[i]
  []
 
-[3] [4] [5] (./shift_analysis.aux) ) 
+[5] [6] [7] (./shift_analysis.aux) ) 
 Here is how much of TeX's memory you used:
- 918 strings out of 493488
- 10513 string characters out of 3141326
- 64359 words of memory out of 3000000
- 4281 multiletter control sequences out of 15000+200000
- 6656 words of font info for 24 fonts, out of 3000000 for 9000
+ 2417 strings out of 493488
+ 33648 string characters out of 3141326
+ 92672 words of memory out of 3000000
+ 5697 multiletter control sequences out of 15000+200000
+ 6955 words of font info for 25 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 27i,4n,20p,584b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,24p,525b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/typ
@@ -160,12 +341,13 @@ e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type
 /public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti10.pfb>
-Output written on shift_analysis.pdf (5 pages, 125364 bytes).
+/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti10.pfb>
+Output written on shift_analysis.pdf (7 pages, 251474 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 281 PDF objects out of 1000 (max. 8388607)
+ 203 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
