@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  7 FEB 2014 17:34
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  8 FEB 2014 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -255,35 +255,35 @@ ams/rotate_right.pdf>]
 File: ./diagrams/r_s_2bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_s_2bits.pdf>
-Package pdftex.def Info: ./diagrams/r_s_2bits.pdf used on input line 65.
+Package pdftex.def Info: ./diagrams/r_s_2bits.pdf used on input line 64.
 (pdftex.def)             Requested size: 155.24895pt x 85.93454pt.
 
 <./diagrams/r_s_6bits.pdf, id=24, 553.06625pt x 306.14375pt>
 File: ./diagrams/r_s_6bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_s_6bits.pdf>
-Package pdftex.def Info: ./diagrams/r_s_6bits.pdf used on input line 65.
+Package pdftex.def Info: ./diagrams/r_s_6bits.pdf used on input line 64.
 (pdftex.def)             Requested size: 155.24895pt x 85.93454pt.
 
 <./diagrams/r_d_4bits.pdf, id=25, 562.1pt x 306.14375pt>
 File: ./diagrams/r_d_4bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_d_4bits.pdf>
-Package pdftex.def Info: ./diagrams/r_d_4bits.pdf used on input line 71.
+Package pdftex.def Info: ./diagrams/r_d_4bits.pdf used on input line 70.
 (pdftex.def)             Requested size: 155.24895pt x 84.55182pt.
 
 <./diagrams/r_d_2bits.pdf, id=26, 562.1pt x 306.14375pt>
 File: ./diagrams/r_d_2bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_d_2bits.pdf>
-Package pdftex.def Info: ./diagrams/r_d_2bits.pdf used on input line 71.
+Package pdftex.def Info: ./diagrams/r_d_2bits.pdf used on input line 70.
 (pdftex.def)             Requested size: 155.24895pt x 84.55182pt.
 
 <./diagrams/y_single_equality.pdf, id=27, 469.755pt x 170.6375pt>
 File: ./diagrams/y_single_equality.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_single_equality.pdf>
-Package pdftex.def Info: ./diagrams/y_single_equality.pdf used on input line 82
+Package pdftex.def Info: ./diagrams/y_single_equality.pdf used on input line 81
 .
 (pdftex.def)             Requested size: 172.5pt x 62.6584pt.
 
@@ -291,40 +291,35 @@ Package pdftex.def Info: ./diagrams/y_single_equality.pdf used on input line 82
 File: ./diagrams/y_set_equality.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_set_equality.pdf>
-Package pdftex.def Info: ./diagrams/y_set_equality.pdf used on input line 87.
+Package pdftex.def Info: ./diagrams/y_set_equality.pdf used on input line 86.
 (pdftex.def)             Requested size: 172.5pt x 66.34418pt.
 
 <./diagrams/y_both_single.pdf, id=29, 469.755pt x 170.6375pt>
 File: ./diagrams/y_both_single.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_both_single.pdf>
-Package pdftex.def Info: ./diagrams/y_both_single.pdf used on input line 97.
+Package pdftex.def Info: ./diagrams/y_both_single.pdf used on input line 96.
 (pdftex.def)             Requested size: 172.5pt x 62.6584pt.
 
 <./diagrams/y_both_set.pdf, id=30, 469.755pt x 186.6975pt>
 File: ./diagrams/y_both_set.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_both_set.pdf>
-Package pdftex.def Info: ./diagrams/y_both_set.pdf used on input line 102.
+Package pdftex.def Info: ./diagrams/y_both_set.pdf used on input line 101.
 (pdftex.def)             Requested size: 172.5pt x 68.55566pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 110.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 109.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 110.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
  [2 <./diagrams/r_s_2bits.pdf> <./diagrams/r_s_6bits.pdf> <./diagrams/r_d_4bits
 .pdf> <./diagrams/r_d_2bits.pdf>] [3 <./diagrams/y_single_equality.pdf> <./diag
 rams/y_set_equality.pdf> <./diagrams/y_both_single.pdf> <./diagrams/y_both_set.
-pdf>] [4]
-Overfull \hbox (67.72371pt too wide) in paragraph at lines 172--173
-[]\OT1/cmr/m/n/10 Assume the shuf-fle stage of CETD does not work. That means D
-[]A[i]=X[]A[i]=X[]B[i]=D[]B[i]
- []
-
-[5] [6] [7] (./shift_analysis.aux) ) 
+pdf>] [4] [5]
+[6] [7] (./shift_analysis.aux) ) 
 Here is how much of TeX's memory you used:
  2417 strings out of 493488
  33648 string characters out of 3141326
@@ -333,18 +328,18 @@ Here is how much of TeX's memory you used:
  6955 words of font info for 25 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,8n,24p,525b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti10.pfb>
-Output written on shift_analysis.pdf (7 pages, 251474 bytes).
+</usr/local/texlive/2012/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb>
+Output written on shift_analysis.pdf (7 pages, 253051 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  203 compressed objects within 3 object streams

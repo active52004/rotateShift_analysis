@@ -43,7 +43,6 @@ Unlike logical shifting and arithmetic shifting, rotate shifting
 behaves like whirling a wheel. The empty position in a message blk shifted is
 filled by the bits shifted out. Figure 1 express the concept of rotate shift.
 
-
 We can refer that the result of rotate shifting a message block depends on the
 value of blk and the bits shifted.  If two message blocks whose value are
 identical are shifted with distinct R$_i$s, the result blocks may be
@@ -164,14 +163,20 @@ The proof of Theorem 1.1 and Theorem 1.2 and Corollary 1.2 to 1.5 can be refered
 Hence the shift bit parameter set R\_A and R\_B are randomly generated, the probability of Y set collision for each input case is determined by the number of specific combinations of R\_A and R\_B. The computation of Pr[Y\_A = Y\_B] is based on this idea.
 
 \subsubsection{Single Block Equality Case}
-\paragraph{The Probability of Two Identical Y Block}
-As discussed in above section, if each element in the X set is formed by a pattern P with pattern lentgh P$_l$= 2$^p$ and none of the element can be formed by rotate shifting the left elements, the result Y sets Y\_A and Y\_B have probability of Single Block Equality(SBE). This probability can be expressed as the following way:
+Assume two identical sets X\_A and X\_B satisfy the following properties:
+\begin{itemize}
+	\item Each element is formed by a pattern with same length P\_L = 2$^p$
+	\item Each element cannot be formed by rotate shifting any other element.
+\end{itemize}
+Such two sets X\_A and X\_B can only result single block identical Y\_A and Y\_B.
+The probability of single block equality of Y\_A and Y\_B is marked as Pr[SBE] and expressed as the following way:
 \begin{defination}
 Pr[SBE] = $$\prod_{i=1}^M Pr[Y\_A[i] = Y\_B[i]]$$ M is the No. of elements in a set
 \end{defination} 
-Assume the shuffle stage of CETD does not work. That means D\_A[i]=X\_A[i]=X\_B[i]=D\_B[i] for all i$\in$[1,M]. Then Pr[Y\_A[i] = Y\_B[i]] can be expressed as Pr[Y\_A[i] = Y\_B[i] | X\_A[i] = X\_B[i] \& R\_A and R\_B are randomly generated]. We use Pr[Y block collision] to express this probability. 
 
-If R\_A[i] = R\_B[i] for all i$\in$[1,M], then Pr[Y\_A[i] = Y\_B[i]] = 1. When R\_A and R\_B is distinct, then at least one R\_A[i]-R\_A[i] pair int two R sets is distinct. For a distinct R block pair, their related Y block pair can be identical when the related X pair is formed by pattern. The probability is expressed in Theorem 1.3:
+As D\_A[i]=X\_A[i]=X\_B[i]=D\_B[i] for all i$\in$[1,M], Pr[Y\_A[i] = Y\_B[i]] can be expressed as Pr[Y\_A[i] = Y\_B[i] | X\_A[i] = X\_B[i] \& R\_A and R\_B are randomly generated]. We use Pr[Y block collision] to express this probability. 
+
+If R\_A[i] = R\_B[i] for all i$\in$[1,M], then Pr[Y\_A[i] = Y\_B[i]] = 1. When R\_A and R\_B is distinct, then at least one (R\_A[i],R\_A[i]) pair int two R sets is distinct.  Pr[Y block collision] is expressed in Theorem 1.3:
 \begin{theorem}
 If the No. of bits of each block in X\_A[i]-X\_B[i] pair is N=2$^n$, the pattern length P$_l$=2$^p$ where p$\in$[0,n-1]. The pattern contains no internal sub-pattern, then Pr[Y block collision] = 1/2$^p$
 \end{theorem}
@@ -187,11 +192,22 @@ The proof of theorem can be referred in appendix.
 	\item If Y\_A is identical to Y\_B in set level, element in Y\_B can be regarded as a multiset permutation of set Y\_A.
 \end{itemize}
 
-If an element in an X set, marked as X[i], can be formed by rotate shifting another element in X, marked as X[i] where i$\neq$j, then we call these two block "same base element". Two same base elements can result two identical Y blocks with distinct shifting bit R[i]$\neq$R[j]. 
+Assume two identical sets X\_A and X\_B satisfy the following properties:
+\begin{itemize}
+	\item Each element can be formed by rotate shifting any other element in the set
+	\item None of the elements is formed by pattern.
+\end{itemize}
+Such two sets X\_A and X\_B can only result set level identical Y\_A and Y\_B.
+The probability of set level equality of Y\_A and Y\_B is marked as Pr[SLE] and expressed as the following way:
+\begin{defination}
+Pr[SLE] = $$\prod_{i=1,j=1}^M Pr[Y\_A[i] = Y\_B[j]]$$ where M is the No. of elements in a set, i,j$\in$[1,M] and i$\neq$j
+\end{defination} 
 
-When none of an element in a X set contains a pattern, we call this X set a no-pattern set. Assume X\_A and X\_B are two identical no-pattern sets. It is impossible to two distinct R sets on X\_A and X\_B to form two single-block-equality Y sets . However, if there is some elements in X\_A set are same base elemnts, Y\_A and Y\_B can have Set Level Equality(SLE). 
-
-Assume all elements in X\_A set are same base elments. 
+\paragraph{what to say next}
+\begin{itemize}
+	\item for any Y\_A, the set level identical Y\_B is a permutation of Y\_A
+	\item The No. of Y\_B is effected by the value distribution of elements in Y\_A
+\end{itemize}
 
 
 
@@ -205,14 +221,19 @@ Assume all elements in X\_A set are same base elments.
 
 \subsection{A General Condition of X Set and Related Y Set Collision}
 \paragraph{what to say in this section}
-
+\begin{itemize}
+	\item If shuffle stage works, the properties in some block pairs in D\_A and D\_B can be eliminated, while the remaining blocks maintain the pattern
+	\item the no-pattern block pairs follow the analysis in Main Case 3.
+	\item these patterned block pairs can be splited into several, each group is a kind of pattern.
+	\item the pattern in any two group is distinct
+	\item assume the No. of element in each group is expressed as M$_i$, then the theorem of each case of X sets can be applied in each group
+\end{itemize}
 
 \appendix
-\section{Proof of Theorem 1.1 and Theorem 1.2}
+\section{Proof of Pattern Introduction}
 \subsection{Proof of Theorem 1}
 \subsection{Proof of Theorem 2}
-\section{Proof of Theorem 1.3}
-\section{Proof of Theorem 1.4 and 1.5}
+\section{Proof of Probability Computation}
 \subsection{Proof of Theorem 1.4}
 \subsection{Proof of Theorem 1.5}
 \end{document}
