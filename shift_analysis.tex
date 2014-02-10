@@ -159,49 +159,41 @@ Figure 3 and Figure 4 express the examples of X sets that lead to SLE Y sets wit
 	\item if the Y pairs are iie, then each X block pair has pattern
 	\item if the Y pairs are cie, then each X block in a sub-set is from a same base
 \end{itemize}
-Assuem the number of distinct block pairs in R\_A and R\_B is R$_d$. For these R block pairs, their related X\_A and X\_B blocks formed a sub-group, marked as X\_A$_s$ and X\_B$_s$, and this sub-group is IIE. The related sub-group in Y\_A is marked as Y\_A$_s$ and the one in Y\_B for Y\_B$_s$.
+Assume the number of distinct block pairs in R\_A and R\_B is R$_d$. For these R block pairs, their related X\_A and X\_B blocks formed a sub-group, marked as X\_A$_s$ and X\_B$_s$, and this sub-group is IIE. The related sub-group in Y\_A is marked as Y\_A$_s$ and the one in Y\_B for Y\_B$_s$.
 
+In this part, we discuss the equality case of Y\_A$_s$ and Y\_B$_s$
 \paragraph{Identical Index Equality Case}
-As shown in Figure 2(a), two identical X blocks can result two identical Y blocks while their relative shifting bit parameter R[i] and R[j] are distinct. 
-We found that the identical X block pair X\_A[i]=X\_B[i] resulting identical Y blocks with distinct R\_A[i] and R\_B[i] have a common property, this property is expressed in Theorem 1.
-
+If Y\_A$_s$ and Y\_B$_s$ are IIE, then for all i$\in$[1, R$_d$] the following two properties are met:
+\begin{itemize}
+	\item Y\_A$_s$[i] = Y\_B$_s$[i] 
+	\item R\_A$_s$[i] $\neq$ Y\_B$_s$[i]
+	\item X\_A$_s$[i] = X\_B$_s$[i]
+\end{itemize}
+Figure 2(a) provides a instance of IIE Y sets.
+The identical block pairs (X\_A$_s$[i],X\_B$_s$[i]) that lead to IIE Y\_A$_s$ and Y\_B$_s$ have the property in Theorem 1.1:
 \begin{theorem}
-Assume X\_A[i] and X\_B[i] are two identical block from two set X\_A and X\_B with same index i. X\_A[i] and X\_B[i] have same number of bits N=2$^n$. The result of rotate shifting X\_A[i] and X\_B[i] with distinct shifting bit parameter R\_A[i] and R\_B[i] are marked as Y\_A[i] and Y\_B[i]. Then Y\_A[i] and Y\_B[i] can be identical only when X\_A[i] and X\_B[i] are formed by repeating a binary pattern P, which is a binary segment. The length of this pattern P can be expressed as:
+Assume X\_A[i] and X\_B[i] are two identical block from two sub-group X\_A$_s$ and X\_B$_s$ with same index i. X\_A[i] and X\_B[i] have same number of bits N=2$^n$. The result of rotate shifting X\_A[i] and X\_B[i] with distinct shifting bit parameter R\_A[i] and R\_B[i] are marked as Y\_A[i] and Y\_B[i]. 
+
+Then Y\_A[i] and Y\_B[i] can be identical only when X\_A[i] and X\_B[i] are formed by repeating a binary pattern P, which is a binary segment. The length of this pattern P can be expressed as:
 
 	P\_L = 2$^p$, p$\in$[0,n-1]
 \end{theorem}
 
-Assume the two X sets X\_A and X\_B are identical and can  form single block equality. Base on Theorem 1.1, we can conclude the corollary of the relationship between X set pair and Y set pair for single block case. 
-\begin{corollary}
-Assume there is M elements in X\_A and X\_B. If there is at least one i$\in$[1,M], X\_A[i] = X\_B[i] is formed by repeating a pattern P$_i$ whose length is P\_L$_i$ = 2$^pi$, then Y\_A and Y\_B can be single block identical with some two distinct shifting bits parameter sets R\_A and R\_B.
-\end{corollary} 
-
 \paragraph{Cross Index Equality Case}
-From Figure 2(b) we can see that two distinct X blocks X\_A[i] and X\_B[j] can result two identical Y blocks Y\_A[i]=Y\_B[j] when the relative R\_A[i] $\neq$ R\_B[j]. 
-
-
-
-We found that if Y\_A$_s$ and Y\_B$_s$ are CIE, the related X\_A$_s$ and X\_B$_s$ contains a property. 
-This property is expressed in Theorem 2.
-
+If Y\_A$_s$ and Y\_B$_s$ are CIE, then for all distinct (i,j) that i,j$\in$[1, R$_d$] the following two properties are met:
+\begin{itemize}
+	\item Y\_A$_s$[i] = Y\_B$_s$[j] 
+	\item R\_A$_s$[i] $\neq$ Y\_B$_s$[i]
+	\item X\_A$_s$[i] = X\_B$_s$[i]
+\end{itemize}
+Figure 2(b) provides an instance of CIE Y sets.
+The blocks in X\_A$_s$ and X\_B$_s$ that lead to CIE Y\_A$_s$ and Y\_B$_s$ have the property in Theorem 1.2:
 \begin{theorem}
-Assume X\_A[i] and X\_B[j] are two distinct blocks from two set X\_A and X\_B and i$\neq$j. X\_A[i] and X\_B[i] have same number of bits N=2$^n$. 
-The result of rotate shifting X\_A[i] and X\_B[j] with distinct shifting bit parameter R\_A[i] and R\_B[i] are marked as Y\_A[i] and Y\_B[i]. 
-
-Then Y\_A[i] and Y\_B[j] can be identical when X\_A[i] can be rotate shifted to X\_B[i]
+If Y\_A$_s$ and Y\_B$_s$ are CIE, each element in X\_A$_s$ can be formed by rotate shifting another element in X\_A$_s$.
 \end{theorem}
 
-Assume the two X sets X\_A and X\_B are identical and can form set level equality. Base on Theorem 1.2, we can conclude the corollary of the relationship between X set pair and Y set pair for set level equality. 
-\begin{corollary}
-Assume there are M elements in X\_A and X\_B. If there is at least two pairs of data, marked as (X\_A[i],X\_B[j]) and (X\_A[j]),X\_B[i]) where i,j$\in$[1,M] and i$\neq$j, that X\_A[i] can be formed by shifting X\_A[j], then Y\_A and Y\_B can be set level identical with some two distinct shifting bits parameter sets R\_A and R\_B.
-\end{corollary} 
-
-\paragraph{An Intersection Case}
-Base on Corollary 1.3 and Corollary 1.4, we can draw the following corollary for the X set pairs that can form both set level and single block equality:
-\begin{corollary}
-Assume there is M elements in X\_A and X\_B. If there are at least two pairs of data, marked as (X\_A[i],X\_B[j]) and (X\_A[j]),X\_B[i]) where i,j$\in$[1,M] and i$\neq$j, that X\_A[i] can be formed by shifting X\_A[j] and X\_A[i] = X\_B[i] or X\_A[j]=X\_B[j] is formed by repeating a pattern P$_i$ whose length is P\_L$_i$ = 2$^pi$ , then Y\_A and Y\_B can be either set level or single block identical with some two distinct shifting bits parameter sets R\_A and R\_B.
-\end{corollary}
-The proof of Theorem 1.1 and Theorem 1.2 and Corollary 1.2 to 1.5 can be refered in appendix.
+If each element in X\_A$_s$ is formed by a pattern can be formed by rotate shifting another element in X\_B$_s$ then the related Y\_A$_s$ and Y\_B$_s$ can be either IIE or CIE or SLE.
+The proof of Theorem 1.1 and Theorem 1.2 can be refered in appendix.
 
 
 \subsection{The Probability of Y Set Collision} 
@@ -215,28 +207,36 @@ The proof of Theorem 1.1 and Theorem 1.2 and Corollary 1.2 to 1.5 can be refered
 \end{itemize}
 Hence the shift bit parameter set R\_A and R\_B are randomly generated, the probability of Y set collision for each input case is determined by the number of specific combinations of R\_A and R\_B. The computation of Pr[Y\_A = Y\_B] is based on this idea.
 
-\subsubsection{Single Block Equality Case}
+\subsubsection{Identical Index Equality Case}
+For ease analysis, we assume R\_A[i] $\neq$ R\_B[i] for all i$\in$[1, M], where M is the No. of elements in R\_A.
+From Theorem 1.1 we know that Y\_A and Y\_B are IIE if each element in X\_A is formed by a pattern P whose length P\_L is 2$^p$. 
 Assume two identical sets X\_A and X\_B satisfy the following properties:
 \begin{itemize}
 	\item Each element is formed by a pattern with same length P\_L = 2$^p$
 	\item Each element cannot be formed by rotate shifting any other element.
 \end{itemize}
-Such two sets X\_A and X\_B can only result single block identical Y\_A and Y\_B.
-The probability of single block equality of Y\_A and Y\_B is marked as Pr[SBE] and expressed as the following way:
+We call this kind of X\_A and X\_B Identical Pattern Length(IPL) X Sets. 
+IPL X sets can form IIE Y sets.
+Assume D\_A set is randomly generated, then the probability of a IPL D\_A is expressed as:
 \begin{defination}
-Pr[SBE] = $$\prod_{i=1}^M Pr[Y\_A[i] = Y\_B[i]]$$ M is the No. of elements in a set
+Pr[ IPL D(X)] = 
+\end{defination} 
+
+The probability of IIE of Y\_A and Y\_B is marked as Pr[IIE Y sets] and expressed as the following way:
+\begin{defination}
+Pr[IIE Y sets] = $$\prod_{i=1}^M Pr[Y\_A[i] = Y\_B[i]]$$ M is the No. of elements in a set
 \end{defination} 
 
 As D\_A[i]=X\_A[i]=X\_B[i]=D\_B[i] for all i$\in$[1,M], Pr[Y\_A[i] = Y\_B[i]] can be expressed as Pr[Y\_A[i] = Y\_B[i] | X\_A[i] = X\_B[i] \& R\_A and R\_B are randomly generated]. We use Pr[Y block collision] to express this probability. 
 
-If R\_A[i] = R\_B[i] for all i$\in$[1,M], then Pr[Y\_A[i] = Y\_B[i]] = 1. When R\_A and R\_B is distinct, then at least one (R\_A[i],R\_A[i]) pair int two R sets is distinct.  Pr[Y block collision] is expressed in Theorem 1.3:
+Pr[Y block collision] is expressed in Theorem 1.3:
 \begin{theorem}
 If the No. of bits of each block in X\_A[i]-X\_B[i] pair is N=2$^n$, the pattern length P$_l$=2$^p$ where p$\in$[0,n-1]. The pattern contains no internal sub-pattern, then Pr[Y block collision] = 1/2$^p$
 \end{theorem}
 If each X set contains M elements, Pr[SBE] = (1/2$^p$)$^M$.
 The proof of theorem can be referred in appendix.
 
-\subsubsection{Set Level Equality Case}
+\subsubsection{Cross Index Equality Case}
 \paragraph{What to say in this section}
 \begin{itemize}
 	\item In general condition, Y\_A and Y\_B are multisets. If Y\_A and Y\_B are identical in set level, then Y\_B is a permutation of Y\_A.
