@@ -5,13 +5,13 @@
 \usepackage{subfigure}
 %\usepackage{subfig}
 \usepackage{verbatim}
+\usepackage{glossaries}
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{defination}{Definition}[section]
 \begin{document} 
 \section{The Collision Probability of Y Set}
-\paragraph{Glossary} The symbol, abbreviation and marks needed in
-expressing the shift stage and probability computation.
 
 \subsection{Preliminaries}
 \paragraph{The Equality of Two Sets}
@@ -23,38 +23,48 @@ The definition of Cross Index Equality is expressed here:
 \begin{defination}
 Cross Index Equality(CIE): For any i,j$\in$[1,M], X\_A[i] = X\_B[j], where i$\neq$j
 \end{defination}
-Any two sets that have same number of elements can be splited into several sub-sets and each sub-sets contains several (X\_A[i],X\_B[i]) pairs. The number of sub-sets various from 1 to M. We give the definition of set level equality of two sets with same number of elements:
+
+Any two sets that have same number of elements can be splited into several sub-groups and each sub-groups contains several (X\_A[i],X\_B[i]) pairs. The number of sub-groups various from 1 to M. We give the definition of set level equality of two sets with same number of elements:
 \begin{defination}
 Set Level Equality(SLE): Each sub-set have one of the two kinds of Equality.
 \end{defination}
+
 For two sets X\_A and X\_B, if there is no way of split that at least one sub-set is of CIE and there are at least one way of split that all sub-sets are of IIE, then such X\_A and X\_B are IIE only Sets. 
 The definition of CIE only Sets is given in same way.
 
 \subsubsection{Replay Attack and Y Set Collision}
 \paragraph{The Message Sets in CETD Under Replay Attack}
+The Cost-Effective Tag Design can be expressed as the following procedure:
 \begin{itemize}
-	\item D\_A and D\_B are definitely IIE.
-	\item X\_A=D\_A, X\_B=D\_B
-	\item Y\_A and Y\_B are just SLE
-	\item when Y\_A and Y\_B are SLE, tag collision
+	\item The data is split into blocks. The block length is tag length. The block set is marked as D
+	\item The content of blocks are shuffled. The output set of shuffle is marked as X.
+	\item The content of each block is rotate shifted. The output set of rotate shift is marked as Y.
+	\item All the blocks in Y is XORed to form the tag T.
+	\item The control parameters is retrived from the segment of nonce N. The parameter set of shuffle is marked as S. The set for rotate shift is R.
 \end{itemize}
-In replay attack, the adversary replace a data-tag pair on the memory with a
+
+In replay attack, the adversary replaces a data-tag pair on the memory with a
 pair copied from the same address at an old time point. That means for the two
-pairs at different time point, the two message block sets and related tags are
+pairs at different time point, the two message block sets D\_A and D\_B and related tags T$_a$ and T$_b$ are
 identical respectively, while the nonce N$_A$ and N$_B$ are randomly generated and
-the equality is unpredictable if their generator is of high quality.  That means
-the shifting bits parameter segment on the nonce R\_A and R\_B, are randomly
+the equality is unpredictable if their generator is of high quality. The shifting bits parameter segment on the nonce R\_A and R\_B, are randomly
 generated.
+We can see that if the Y set for the old time point, marked as Y\_A, is SLE to the Y set for new time point, marked as Y\_B, T$_a$=T$_b$.
+
+Based on the concept of set equality, the message block sets in the generation of T$_a$ and verification of T$_b$ meet the following properties if the replay attack succeeds:
+\begin{itemize}
+	\item D\_A and D\_B are IIE.
+	\item If the shuffle stage does not work. X\_A=D\_A, X\_B=D\_B
+	\item Y\_A and Y\_B are SLE
+\end{itemize}
 
 In this scenario, the probability of a successful attack can be expressed as the equation 1.1:
 \begin{defination}
-Pr[Successful Replay Attack] = Pr[Tag$_a$ = Tag$_b$ $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
+Pr[Successful Replay Attack] = Pr[T$_a$ = T$_b$ $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
 							 = Pr[Y\_A = Y\_B $\mid$ (D\_A = D\_B) \& (R\_A and R\_B are random)]
 							 
 D\_A and D\_B sets are of Identical Index Equality. Y\_A and Y\_B is of Set Level Equality.
 \end{defination} 
-
-We can see that the set level equality of Y\_A and Y\_B will directly leads to the collision of tag and cause the succeed of replay attack. 
 For easy understanding, we assume the shuffle stage does not work at first, which means D\_A = X\_A = D\_B = X\_B(IIE). Hence the Y set is the output of rotate shifting stage in CETD, we will analyze the properties of block rotate shifting and the cases of input sets that can result Y set collision(SLE). 
 
 \begin{figure}[htbp]
@@ -65,23 +75,19 @@ For easy understanding, we assume the shuffle stage does not work at first, whic
 \end{figure}
 
 \subsubsection{Rotate Shifting Introduction} 
-\begin{itemize}
-	\item the concept of rotate shift
-	\item The examples of X,R,Y
-\end{itemize}
 Unlike logical shifting and arithmetic shifting, rotate shifting
 behaves like whirling a wheel. The empty position in a message block shifted is
 filled by the bits shifted out. Figure 1 express the concept of rotate shift.
 
 We can refer that the result of rotate shifting a message block depends on the
 value of block and the bits shifted.  If two message blocks whose value are
-identical are shifted with distinct R$_i$s, the result blocks may be
-identical.That means when R$_i$ fixed,the mapping from message blocks to the
+identical are shifted with distinct bits, the result blocks may be
+identical. That means when shifting bits fixed,the mapping from X blocks to the
 shifted result blocks is not injection. This case is expressed in Figure 2(a).
 
-For two distinct message blocks, however, their result blocks may be identical
-when their R$_i$s are distinct. This case is expressed in Figure 2(b).  
-When the R$_i$s of two message blocks are identical, the equality of result blocks
+For two distinct X blocks, however, their result blocks may be identical
+when their shifting bits are distinct. This case is expressed in Figure 2(b).  
+When the shifting bits of two message blocks are identical, the equality of result blocks
 is same as the equality of their input blocks.				
 
 \begin{figure}
@@ -134,31 +140,23 @@ is same as the equality of their input blocks.
 \end{figure}
 
 \subsection{Rotate Shifting and Y Set Collision} 
-\begin{itemize}
-	\item distinct pairs in R sets: IIE pairs and CIE pairs
-	\item X block pairs causing IIE Y block pairs
-	\item X block pairs causing CIE Y block pairs
-\end{itemize}
-Assume the shuffle stage does not work, then D\_A= X\_A=D\_B=X\_B,which means the following properties exist in X\_A and X\_B:
+Assume the shuffle stage does not work, then D\_A= X\_A=D\_B=X\_B, which means the following properties exist in X\_A and X\_B:
 \begin{itemize}
 	\item X\_A[i] = X\_B[i] for all i$\in$[1,M], M is the number of elements
 	\item The equality of elements in a X set is uncertain.
 \end{itemize}
-That means X\_A and X\_B are of Identical Index Equality. 
+Then X\_A and X\_B are of Identical Index Equality. 
 All the analysis in this section is based on the assumption that shuffle stage does not work.
-If such X\_A and X\_B result two Y sets of Set Level Equality using two identical shifting bits parameter sets R\_A and R\_B, the the related tag T$_a$ = T$_b$.
+
+If such X\_A and X\_B result two Y sets of Set Level Equality, the related tag T$_a$ = T$_b$.
  
 Figure 3 and Figure 4 express the examples of X sets that lead to SLE Y sets with distinct R sets. In this paper, we analyze the cases of the input set pair (X\_A and X\_B) of shifting stage in CETD under replay attack that can lead to Y set pair collision(SLE).
 
 
 
 \subsubsection{Case of X Sets Resulting Y Set Collision}
-\begin{itemize}
-	\item If R\_A $\neq$ R\_B, there is at least one pair distinct
-	\item the related x blocks pairs should generate a SLE y pairs.
-	\item if the Y pairs are iie, then each X block pair has pattern
-	\item if the Y pairs are cie, then each X block in a sub-set is from a same base
-\end{itemize}
+If R\_A and R\_B are IIE, then for any two identical set X\_A and X\_B, Y\_A and Y\_B are IIE. If there is at least one pair of blocks in R\_A and R\_B, marked as (R\_A[i], R\_B[i]), is distinct, then equality of Y\_A and Y\_B is uncertain.
+
 Assume the number of distinct block pairs in R\_A and R\_B is R$_d$. For these R block pairs, their related X\_A and X\_B blocks formed a sub-group, marked as X\_A$_s$ and X\_B$_s$, and this sub-group is IIE. The related sub-group in Y\_A is marked as Y\_A$_s$ and the one in Y\_B for Y\_B$_s$.
 
 In this part, we discuss the equality case of Y\_A$_s$ and Y\_B$_s$
@@ -197,25 +195,22 @@ The proof of Theorem 1.1 and Theorem 1.2 can be refered in appendix.
 
 
 \subsection{The Probability of Y Set Collision} 
-\begin{itemize}
-	\item Assume the sub-set contaions M blocks, the probability that they are both pattern 
-	\item if they are both pattern, the probability that Y set are iie
-	\item the probability that they are from same base
-	\item if they are same base, the pro that Y set is cie
-	\item the probability that bothe pattern and same base
-	\item if both, the pro of Y SLE
-\end{itemize}
 Hence the shift bit parameter set R\_A and R\_B are randomly generated, the probability of Y set collision for each input case is determined by the number of specific combinations of R\_A and R\_B. The computation of Pr[Y\_A = Y\_B] is based on this idea.
+The following properties are met by any cases of D sets and R sets in replay attack:
+\begin{itemize}
+	\item D\_A[i] = D\_B[i] for all i$\in$[1,M]
+	\item If R\_A[i]=R\_B[i] and X\_A[i]=X\_B[i], then Y\_A[i]=Y\_B[i].
+\end{itemize}
 
 \subsubsection{Identical Index Equality Case}
-For ease analysis, we assume R\_A[i] $\neq$ R\_B[i] for all i$\in$[1, M], where M is the No. of elements in R\_A.
-From Theorem 1.1 we know that Y\_A and Y\_B are IIE if each element in X\_A is formed by a pattern P whose length P\_L is 2$^p$. 
+From Theorem 1.1 we know that Y\_A and Y\_B can be IIE if each element in X\_A is formed by a pattern P whose length P\_L is 2$^p$. 
 Assume two identical sets X\_A and X\_B satisfy the following properties:
 \begin{itemize}
 	\item Each element is formed by a pattern with same length P\_L = 2$^p$
 	\item Each element cannot be formed by rotate shifting any other element.
 \end{itemize}
-We call this kind of X\_A and X\_B Identical Pattern Length(IPL) X Sets. 
+
+We call this kind of X\_A and X\_B Identical Pattern Length(IPL) IIE X Sets, short for IPL X sets. 
 IPL X sets can form IIE Y sets.
 Assume D\_A set is randomly generated, then the probability of a IPL D\_A is expressed as:
 \begin{defination}
@@ -227,13 +222,17 @@ The probability of IIE of Y\_A and Y\_B is marked as Pr[IIE Y sets] and expresse
 Pr[IIE Y sets] = $$\prod_{i=1}^M Pr[Y\_A[i] = Y\_B[i]]$$ M is the No. of elements in a set
 \end{defination} 
 
-As D\_A[i]=X\_A[i]=X\_B[i]=D\_B[i] for all i$\in$[1,M], Pr[Y\_A[i] = Y\_B[i]] can be expressed as Pr[Y\_A[i] = Y\_B[i] | X\_A[i] = X\_B[i] \& R\_A and R\_B are randomly generated]. We use Pr[Y block collision] to express this probability. 
+As D\_A[i]=X\_A[i]=X\_B[i]=D\_B[i] for all i$\in$[1,M], Pr[Y\_A[i] = Y\_B[i]] can be expressed as Pr[Y\_A[i] = Y\_B[i] $\mid$ X\_A[i] = X\_B[i] \& R\_A[i] $\neq$ R\_B[i]]. We use Pr[Y block collision] to express this probability. 
 
 Pr[Y block collision] is expressed in Theorem 1.3:
 \begin{theorem}
-If the No. of bits of each block in X\_A[i]-X\_B[i] pair is N=2$^n$, the pattern length P$_l$=2$^p$ where p$\in$[0,n-1]. The pattern contains no internal sub-pattern, then Pr[Y block collision] = 1/2$^p$
+If the No. of bits of each block in X\_A[i]-X\_B[i] pair is N=2$^n$, the pattern length P$_l$=2$^p$ where p$\in$[0,n-1]. The pattern contains no internal sub-pattern, then :
+\begin{displaymath}
+Pr[Y block collision] = 1/2^p
+\end{displaymath}
+
 \end{theorem}
-If each X set contains M elements, Pr[SBE] = (1/2$^p$)$^M$.
+If each X set contains M elements, Pr[IIE Y Sets] = (1/2$^p$)$^M$.
 The proof of theorem can be referred in appendix.
 
 \subsubsection{Cross Index Equality Case}
@@ -250,49 +249,71 @@ Assume two identical sets X\_A and X\_B satisfy the following properties:
 	\item Each element can be formed by rotate shifting any other element in the set
 	\item None of the elements is formed by pattern.
 \end{itemize}
-Such two sets X\_A and X\_B can only result set level identical Y\_A and Y\_B.
-The probability of set level equality of Y\_A and Y\_B is marked as Pr[SLE] and expressed as the following way:
+As each element in the X set can be formed by rotate shifting a base block, we call such X set Same Base Block(SBB) X sets, short for SBB X sets. If none of the element is formed by a pattern ,we call such X set SBB only sets.
+
+Assume D\_A and D\_B are randomly generated, the probability of generating SBB only D set is expressed:
 \begin{defination}
-Pr[SLE] = $$\prod_{i=1,j=1}^M Pr[Y\_A[i] = Y\_B[j]]$$ where M is the No. of elements in a set, i,j$\in$[1,M] and i$\neq$j
+Pr[SBB only D]= 
+\end{defination}
+
+Using SBB only X\_A and X\_B, the probability of CIE of Y\_A and Y\_B is marked as Pr[CIE Y Sets] and expressed as the following way:
+\begin{defination}
+Pr[CIE Y Sets] = $$\prod_{i=1,j=1}^M Pr[Y\_A[i] = Y\_B[j]]$$ where M is the No. of elements in a set, i,j$\in$[1,M] and i$\neq$j
 \end{defination} 
 
-\paragraph{what to say next}
-\begin{itemize}
-	\item for any Y\_A, the set level identical Y\_B is a permutation of Y\_A
-	\item The No. of Y\_B is effected by the value distribution of elements in Y\_A
-\end{itemize}
+For two randomly generated R\_A and R\_B, the probability that Y\_A and Y\_B are CIE when X\_A and X\_B are SBB only is expressed in the following theorem:
+\begin{theorem}
+Assume X\_A and X\_B are SBB only, R\_A and R\_B are randomly generated,then:
 
+Pr[CIE Y Sets]:
+\begin{displaymath}
+(\sum_{K=1}^{min(N,M)} \binom{N}{K} * (M!/v1!v2!v3! \cdots vk!) ^ 2 )/(N^M)^2
+\end{displaymath}
 
+\end{theorem}
+The proof of this theorm is expressed in the appendix.
 
 \subsubsection{The Intersection Case}
-\paragraph{What to say in this section}
-\begin{itemize}
-	\item If there is pattern in the block, for each element, the mapping between r and Y is not 1-to-1.
-	\item Compute set level equality first, then solve the severl r to 1 Y problem
-	\item express the Probability with combinatorics
-\end{itemize}
+If the blocks in X set is formed by rotate shifting a base block and this base block is formed by a pattern, then such X set pair X\_A and X\_B can result either IIE or CIE Y set pairs.
 
-\subsection{A General Condition of X Set and Related Y Set Collision}
-\paragraph{what to say in this section}
-\begin{itemize}
-	\item If shuffle stage works, the properties in some block pairs in D\_A and D\_B can be eliminated, while the remaining blocks maintain the pattern
-	\item the no-pattern block pairs follow the analysis in Main Case 3.
-	\item these patterned block pairs can be splited into several, each group is a kind of pattern.
-	\item the pattern in any two group is distinct
-	\item assume the No. of element in each group is expressed as M$_i$, then the theorem of each case of X sets can be applied in each group
-\end{itemize}
+Assume the R\_A and R\_B are randomly generated, the probability that Y\_A and Y\_B are SLE is expressed in the following theorem:
+\begin{theorem}
+Assume X\_A and X\_B are both SBB and IPL, R\_A and R\_B are randomly generated,then:
+
+Pr[SLE Y Sets]:
+\begin{displaymath}
+(\sum_{K=1}^{min(N,M)} \binom{N}{K} * (M!/v1!v2!v3! \cdots vk!) ^ 2 )/(N^M)^2
+\end{displaymath}
+\end{theorem}
+The proof of this theorm is expressed in the appendix.
+
+\subsection{A General Case of Sets in CETD}
+\paragraph{The general Case of D sets}
+During the replay attack, the D\_A and D\_B sets are IIE. Any D set can be splited into sub-groups of blocks in the following way:
+\begin{equation}
+D = {{IIE only},{CIE only},{Intersection},{No regularity}}
+\end{equation}
+The No. of the elements in these sub-groups is marked as M$_{IIE}$, M$_{CIE}$, M$_{inter}$, M$_{non}$. The following equations are met:
+\begin{equation}
+$$M$_{IIE}$, M$_{CIE}$, M$_{inter}$, M$_{non}$ $\in$[0,M]$$
+$$M$_{IIE}$+ M$_{CIE}$+M$_{inter}$+ M$_{non}$ = M$$
+\end{equation}
+
+\paragraph{The General Case of X Sets}
+In general case, the shuffle stage can change the split of blocks. For a D set that contains regularity, shuffle can reduce the No. of regularity sub-groups and the No. of elements in each group. The properties of no regularity sub-group is analyzed in the next section.
 
 \appendix
 \section{Proof of Pattern Introduction}
-\subsection{Proof of Theorem 1}
+\subsection{Proof of Theorem 1.1}
 This part proves that if two identical block X\_A[i]  and X\_B[i] are shifted different bits and the result blocks remain identical, X\_A[i] is formed by pattern. The pattern length and $\delta$=$\mid$R\_A[i]-R\_B[i] $\mid$ has such correlation:
 \begin{itemize}
 	\item If $\delta$ = P\_L then Y\_A[i] = Y\_B[i] where P\_L the length of pattern
 \end{itemize}
-\paragraph{Proof of Corollary 1.2}
-According to the definition of set block equality, Y\_A[i]=Y\_B[i] for all i$\in$[1,M]. As R\_A $\neq$ R\_B, there is at least one pair (R\_A[i],R\_B[i]) is distinct. As the related X\_A[i] is identical to X\_B[i], X\_A[i] is formed by pattern based on Theorem 1.1.
+Assume the length of X\_A[i] is N bits, where N= 2$^n$. When X\_A[i] is formed by a pattern whose length is P\_L = 2$^p$ bits, then the domain of Y\_A[i] has P\_L distinct values. There are N/P\_L distinct R\_A[i] values that shift X\_A[i] to a Y\_A[i].  
 
-\subsection{Proof of Theorem 2}
+
+\subsection{Proof of Theorem 1.2}
+According to the proof of Theorem 1.1, the 
 Assume Y\_A[i] and Y\_B[j] are identical.  That means the following equations are met:
 \begin{itemize}
 	\item Y\_A[i][b] = X\_A[i][(b+R\_A[i]) mod N] 
@@ -300,11 +321,88 @@ Assume Y\_A[i] and Y\_B[j] are identical.  That means the following equations ar
 	\item Y\_A[i]$_b$ = Y\_B[j]$_b$  
 	\item X\_A[i][(b+R\_A[i]) mod N] = X\_B[j][(b+R\_A[j]) mod N]    
 \end{itemize} 
-
+We can see that for any b$\in$[1,N], X\_A[i][(b+R\_A[i]) mod N] = X\_B[j][(b+R\_A[j]) mod N] when Y\_A[i]=Y\_B[j]. This means if rotate shifting X bits, X\_A[i]=X\_B[i]. Theorem 1.2 get proved.
+ 
 
 \paragraph{Proof of Corollary 1.3}
 According to the definition of set level equality, Y\_A[i]=Y\_B[j] for i,j$\in$[1,M], i$\neq$j and X\_A[i] $\neq$ . As R\_A $\neq$ R\_B, there is at least one pair (R\_A[i],R\_B[i]) is distinct. As the related X\_A[i] is identical to X\_B[i], X\_A[i] is formed by pattern based on Theorem 1.1.
 \section{Proof of Probability Computation}
+
+\subsection{Proof of Theorem 1.3}
+For identical each block pair X\_A[i] and X\_B[i], the No. of combination of R\_A[i] and R\_B[i] = N*N, where N is the length a X block. 
+If X\_A[i] is formed by pattern, then Y\_A[i]=Y\_B[i] if $\mid$R\_A[i]-R\_B[i]$\mid$ = P\_L * K, where P\_L is the pattern length and K is a positive integer. 
+Then for two random R\_A[i] and R\_B[i], Pr[Y\_A[i]=Y\_B[i] $\mid$ X\_A[i] = X\_B[i] \& pattern = P\_L](shoft for Pr[Y\_A[i] = Y\_B[i]]) can be expressed in the following way:
+\begin{itemize}
+	\item Pr[Y\_A[i]=Y\_B[i]] = N * (N/P\_L)/(N*N) = 1/P\_L
+\end{itemize} 
+
+If all the X block pairs is formed by a pattern with length of P\_L and none of a block in X\_A can be formed by rotate shifting another block, then for two randomly generated R\_A and R\_B set, Pr[IIE Y Set] = (1/P\_L)$^M$.
+
 \subsection{Proof of Theorem 1.4}
+From Theorem 1.1 we can see that if a X block is formed by a pattern, then the No. of distinct values in the range of Y block is P\_L. While the domain of a R block has N distinct values, then for a block X, there are N/P\_L distinct R values that lead to a Y value.
+
+If a X block is not formed by a pattern, then for each distinct R value, there is a distinct Y value. That means for a given X set that none of the blocks is formed by a pattern, each R set will lead to a distinct Y set. The map between R set and Y set is bijection.
+
+When each R block is randomly generated, the possible combination of R sets is N$^M$. That means for a given X set, the No. of possible Y set is N$^M$.
+
+Assume X\_A and X\_B are IIE and each block can be formed by rotate shifting another block in the set. On the other hand, none of blocks is formed by a pattern. Then the sub-group of blocks in X\_A and X\_B can form CIE with specific R\_A and R\_B set. 
+
+Assume set Y\_A and Y\_B are SLE, then Y\_B is a permutation of Y\_A. This concept can be modeled in the following way:
+\begin{itemize}
+	\item Assume the M elements in Y\_A contain K distinct values. The No. of the elements that have each value are marked as v1,v2...vk.
+	\item IF the elements in Y\_B are a permutation of the elements in Y\_A, then Y\_A and Y\_B are SLE.
+\end{itemize}
+
+Based on the basic concept in Combinatorics, the No. of a permutation of Y\_A that contains K distinct value can be expressed in the following equation:
+\begin{defination}
+No. of Permutation with K distinct Values:
+\begin{displaymath}
+\binom{M}{v1} * \binom{M-v1}{v2} * \binom{M-v1-v2}{v3} \cdots * \binom{vk}{vk} = M!/v1!v2!v3! \cdots vk!
+\end{displaymath}
+\end{defination}
+As any one of the elements in X set can be formed by rotate shifting another element, then the No. of distinct values of M elements, K, various from 1 to M. If Y\_A has K distinct values, the No. of possible combination of these K elements in Y\_A can be expressed as Com\_Y\_A:
+\begin{defination}
+Com\_Y\_A:
+\begin{displaymath}
+M!/v1!v2!v3! \cdots vk!
+\end{displaymath} 
+\end{defination} 
+
+For each case of Y\_A in Com\_Y\_A, the No. of Y\_B to form SLE is also Com\_Y\_A. Then if Y\_A has K distinct values, Pr[CIE Y sets] can be expressed as:
+\begin{defination}
+Pr[CIE Y Sets]:
+\begin{displaymath}
+ \binom{N}{K} * (M!/v1!v2!v3! \cdots vk!) ^ 2 /(N^M)^2
+\end{displaymath}
+\end{defination}
+If R\_A and R\_B are randomly generated, then the value of K various from 1 to M. We do th sum to get the expression in Theorem 1.4
+\begin{defination}
+Pr[CIE Y Sets]:
+\begin{displaymath}
+(\sum_{K=1}^{min(N,M)} \binom{N}{K} * (M!/v1!v2!v3! \cdots vk!) ^ 2 )/(N^M)^2
+\end{displaymath}
+\end{defination}
+
 \subsection{Proof of Theorem 1.5}
+If the element contains both the properties of CIE and IIE, then the following properties:
+\begin{itemize}
+	\item For two distinct sets R\_A and R\_B, Y\_A and Y\_B can be IIE
+	\item For each value of a Y block, there are N/P\_L distinct R block that can shift X to this Y. That means for a distinct Y set, the No. of R sets is not one.
+	\item For two distinct sets R\_A and R\_B, Y\_A and Y\_B can be CIE
+\end{itemize}
+Base on the Theorem 1.1, if the X block is formed by pattern, then the No. of values in the range of Y is P\_L, base on theorem 1.4, the Pr[SLE Y sets] can be expressed as:
+\begin{defination}
+Pr[SLE Y Sets:]:
+\begin{displaymath}
+\binom{P\_L}{K} * (M!/v1!v2!v3! \cdots vk!) ^ 2 )/(P\_L^M)^2
+\end{displaymath}
+\end{defination}
+
+If R\_A and R\_B are randomly generated, then the value of K various from 1 to M. We do th sum to get the expression in Theorem 1.5
+\begin{defination}
+Pr[SLE Y Sets]:
+\begin{displaymath}
+(\sum_{K=1}^{min(P\_L,M)} \binom{P\_L}{K} * (M!/v1!v2!v3! \cdots vk!) ^ 2 )/(P\_L^M)^2
+\end{displaymath}
+\end{defination}
 \end{document}
