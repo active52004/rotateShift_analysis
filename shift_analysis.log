@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.27)  11 FEB 2014 20:45
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.27)  12 FEB 2014 08:08
 entering extended mode
 **shift_analysis.tex
 (C:\Users\Tom\Documents\GitHub\rotateShift_analysis\shift_analysis.tex
@@ -374,10 +374,10 @@ pdf, id=10, 501.875pt x 401.5pt>
 File: ./diagrams/rotate_right.pdf Graphic file (type pdf)
 
 <use ./diagrams/rotate_right.pdf>
-Package pdftex.def Info: ./diagrams/rotate_right.pdf used on input line 72.
+Package pdftex.def Info: ./diagrams/rotate_right.pdf used on input line 71.
 (pdftex.def)             Requested size: 200.74643pt x 160.59715pt.
 
-Overfull \hbox (5.5285pt too wide) in paragraph at lines 78--81
+Overfull \hbox (5.5285pt too wide) in paragraph at lines 77--80
 \OT1/cmr/m/n/10 Unlike log-i-cal shift-ing and arith-metic shift-ing, ro-tate s
 hift-ing be-haves like whirling
  []
@@ -387,28 +387,28 @@ f>] <./diagrams/r_s_2bits.pdf, id=25, 553.06625pt x 306.14375pt>
 File: ./diagrams/r_s_2bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_s_2bits.pdf>
-Package pdftex.def Info: ./diagrams/r_s_2bits.pdf used on input line 100.
+Package pdftex.def Info: ./diagrams/r_s_2bits.pdf used on input line 99.
 (pdftex.def)             Requested size: 155.24895pt x 85.93454pt.
 
 <./diagrams/r_s_6bits.pdf, id=26, 553.06625pt x 306.14375pt>
 File: ./diagrams/r_s_6bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_s_6bits.pdf>
-Package pdftex.def Info: ./diagrams/r_s_6bits.pdf used on input line 100.
+Package pdftex.def Info: ./diagrams/r_s_6bits.pdf used on input line 99.
 (pdftex.def)             Requested size: 155.24895pt x 85.93454pt.
 
 <./diagrams/r_d_4bits.pdf, id=27, 562.1pt x 306.14375pt>
 File: ./diagrams/r_d_4bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_d_4bits.pdf>
-Package pdftex.def Info: ./diagrams/r_d_4bits.pdf used on input line 106.
+Package pdftex.def Info: ./diagrams/r_d_4bits.pdf used on input line 105.
 (pdftex.def)             Requested size: 155.24895pt x 84.55182pt.
 
 <./diagrams/r_d_2bits.pdf, id=28, 562.1pt x 306.14375pt>
 File: ./diagrams/r_d_2bits.pdf Graphic file (type pdf)
 
 <use ./diagrams/r_d_2bits.pdf>
-Package pdftex.def Info: ./diagrams/r_d_2bits.pdf used on input line 106.
+Package pdftex.def Info: ./diagrams/r_d_2bits.pdf used on input line 105.
 (pdftex.def)             Requested size: 155.24895pt x 84.55182pt.
 
 <./diagrams/y_single_equality.pdf, id=29, 469.755pt x 170.6375pt>
@@ -416,28 +416,28 @@ File: ./diagrams/y_single_equality.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_single_equality.pdf>
 Package pdftex.def Info: ./diagrams/y_single_equality.pdf used on input line 11
-7.
+6.
 (pdftex.def)             Requested size: 172.5pt x 62.6584pt.
 
 <./diagrams/y_set_equality.pdf, id=30, 469.755pt x 180.675pt>
 File: ./diagrams/y_set_equality.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_set_equality.pdf>
-Package pdftex.def Info: ./diagrams/y_set_equality.pdf used on input line 122.
+Package pdftex.def Info: ./diagrams/y_set_equality.pdf used on input line 121.
 (pdftex.def)             Requested size: 172.5pt x 66.34418pt.
 
 <./diagrams/y_both_single.pdf, id=31, 469.755pt x 170.6375pt>
 File: ./diagrams/y_both_single.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_both_single.pdf>
-Package pdftex.def Info: ./diagrams/y_both_single.pdf used on input line 132.
+Package pdftex.def Info: ./diagrams/y_both_single.pdf used on input line 131.
 (pdftex.def)             Requested size: 172.5pt x 62.6584pt.
 
 <./diagrams/y_both_set.pdf, id=32, 469.755pt x 186.6975pt>
 File: ./diagrams/y_both_set.pdf Graphic file (type pdf)
 
 <use ./diagrams/y_both_set.pdf>
-Package pdftex.def Info: ./diagrams/y_both_set.pdf used on input line 137.
+Package pdftex.def Info: ./diagrams/y_both_set.pdf used on input line 136.
 (pdftex.def)             Requested size: 172.5pt x 68.55566pt.
  [3 <C:/Users/Tom/Documents/GitHub/rotateShift_analysis/diagrams/r_s_2bits.pdf>
  <C:/Users/Tom/Documents/GitHub/rotateShift_analysis/diagrams/r_s_6bits.pdf> <C
@@ -448,12 +448,18 @@ Users/Tom/Documents/GitHub/rotateShift_analysis/diagrams/y_single_equality.pdf>
 f> <C:/Users/Tom/Documents/GitHub/rotateShift_analysis/diagrams/y_both_single.p
 df> <C:/Users/Tom/Documents/GitHub/rotateShift_analysis/diagrams/y_both_set.pdf
 >]
-Overfull \hbox (28.37672pt too wide) in paragraph at lines 170--172
+Overfull \hbox (28.37672pt too wide) in paragraph at lines 169--171
 \OT1/cmr/m/n/10 Figure 2(a) pro-vides a in-stance of IIE Y sets. The iden-ti-ca
 l block pairs (X[]A$[]$[i],X[]B$[]$[i])
  []
 
-[5] [6] [7] [8] [9] [10]
+[5]
+Overfull \hbox (9.87181pt too wide) in paragraph at lines 214--215
+[]\OT1/cmr/m/n/10 For two iden-ti-cal X blocks X[]A[i] and X[]B[i], the prob-a-
+bil-ity that Y[]A[i]=Y[]B[i]
+ []
+
+[6] [7] [8] [9] [10]
 
 Package glossaries Warning: \makeglossaries hasn't been used,
 the glossaries will not be updated.
@@ -475,14 +481,17 @@ Here is how much of TeX's memory you used:
 G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><G:/Tools/MikTex/font
 s/type1/public/amsfonts/cm/cmbx12.pfb><G:/Tools/MikTex/fonts/type1/public/amsfo
 nts/cm/cmex10.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><G
-:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><G:/Tools/MikTex/fonts/
-type1/public/amsfonts/cm/cmr10.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><G:/Tools
-/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><G:/Tools/MikTex/fonts/type1/
-public/amsfonts/cm/cmti10.pfb>
-Output written on shift_analysis.pdf (11 pages, 302022 bytes).
+:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmmi5.pfb><G:/Tools/MikTex/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><G:/Tool
+s/MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><G:/Tools/MikTex/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmsy5.pfb><G:/Tools/MikT
+ex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><G:/Tools/MikTex/fonts/type1/public
+/amsfonts/cm/cmti10.pfb>
+Output written on shift_analysis.pdf (11 pages, 330986 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
+ 305 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
