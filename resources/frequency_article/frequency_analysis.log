@@ -1,24 +1,23 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  4 MAR 2014 10:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.3)  20 MAR 2014 16:58
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **frequency_analysis.tex
-(./frequency_analysis.tex
+
+(D:\GitHub\rotateShift_analysis\resources\frequency_article\frequency_analysis.
+tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(G:\Tools\MikTex\tex\latex\base\article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
+(G:\Tools\MikTex\tex\latex\base\size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -33,31 +32,31 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+(G:\Tools\MikTex\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+(G:\Tools\MikTex\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+(G:\Tools\MikTex\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+(G:\Tools\MikTex\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(G:\Tools\MikTex\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(G:\Tools\MikTex\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(G:\Tools\MikTex\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(G:\Tools\MikTex\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
@@ -65,8 +64,8 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.sty
-Package: subfigure 2002/03/15 v2.1.5 subfigure package
+(G:\Tools\MikTex\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip43
 \subfigcapskip=\skip44
 \subfigcaptopadj=\dimen105
@@ -81,13 +80,12 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+(G:\Tools\MikTex\tex\latex\subfigure\subfigure.cfg)
 \subfig@top=\skip47
 \subfig@bottom=\skip48
 )
-(./frequency_analysis.aux)
-\openout1 = `frequency_analysis.aux'.
-
+(D:\GitHub\rotateShift_analysis\resources\frequency_article\frequency_analysis.
+aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
@@ -100,8 +98,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-
-(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+ (G:\Tools\MikTex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count92
 \scratchdimen=\dimen107
@@ -114,119 +111,63 @@ LaTeX Font Info:    ... okay on input line 5.
 \MPnumerator=\count96
 \makeMPintoPDFobject=\count97
 \everyMPtoPDFconversion=\toks16
-) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 9.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+ (G:\Tools\MikTex\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
 
 
-pdfTeX warning: /usr/texbin/pdflatex (file ./frequency/overall_frequency_spot.p
-df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./frequency/overall_frequency_spot.pdf, id=1, 563.64882pt x 289.08pt>
-File: ./frequency/overall_frequency_spot.pdf Graphic file (type pdf)
+pdfTeX warning: pdflatex.exe (file D:/GitHub/rotateShift_analysis/resources/fre
+quency_article/frequency/pattern_no_mix_frequency_new.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<./frequency/pattern_no_mix_frequency_new.pdf, id=1, 549.13855pt x 289.08pt>
+File: ./frequency/pattern_no_mix_frequency_new.pdf Graphic file (type pdf)
 
-<use ./frequency/overall_frequency_spot.pdf>
-Package pdftex.def Info: ./frequency/overall_frequency_spot.pdf used on input l
-ine 20.
-(pdftex.def)             Requested size: 225.45554pt x 115.62994pt.
+<use ./frequency/pattern_no_mix_frequency_new.pdf>
+Package pdftex.def Info: ./frequency/pattern_no_mix_frequency_new.pdf used on i
+nput line 26.
+(pdftex.def)             Requested size: 329.48567pt x 173.44933pt.
 
 
-pdfTeX warning: /usr/texbin/pdflatex (file ./frequency/portion_bar.pdf): PDF in
-clusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file D:/GitHub/rotateShift_analysis/resources/fre
+quency_article/frequency/portion_bar.pdf): PDF inclusion: found PDF version <1.
+7>, but at most version <1.5> allowed
 <./frequency/portion_bar.pdf, id=2, 563.64882pt x 289.08pt>
 File: ./frequency/portion_bar.pdf Graphic file (type pdf)
 
 <use ./frequency/portion_bar.pdf>
-Package pdftex.def Info: ./frequency/portion_bar.pdf used on input line 27.
+Package pdftex.def Info: ./frequency/portion_bar.pdf used on input line 35.
 (pdftex.def)             Requested size: 225.45554pt x 115.62994pt.
  [1
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./frequ
-ency/overall_frequency_spot.pdf> <./frequency/portion_bar.pdf>]
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./frequency/pattern_frequency_spot.p
-df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./frequency/pattern_frequency_spot.pdf, id=33, 563.64882pt x 289.08pt>
-File: ./frequency/pattern_frequency_spot.pdf Graphic file (type pdf)
-
-<use ./frequency/pattern_frequency_spot.pdf>
-Package pdftex.def Info: ./frequency/pattern_frequency_spot.pdf used on input l
-ine 39.
-(pdftex.def)             Requested size: 225.45554pt x 115.62994pt.
- [2 <./frequency/pattern_frequency_spot.pdf>] (./frequency_analysis.aux) ) 
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/GitHub/rotateShift_ana
+lysis/resources/frequency_article/frequency/pattern_no_mix_frequency_new.pdf>] 
+[2 <D:/GitHub/rotateShift_analysis/resources/frequency_article/frequency/portio
+n_bar.pdf>]
+(D:\GitHub\rotateShift_analysis\resources\frequency_article\frequency_analysis.
+aux) ) 
 Here is how much of TeX's memory you used:
- 1664 strings out of 493488
- 24419 string characters out of 3141326
- 77368 words of memory out of 3000000
- 4977 multiletter control sequences out of 15000+200000
+ 1299 strings out of 493921
+ 17366 string characters out of 3152095
+ 68795 words of memory out of 3000000
+ 4631 multiletter control sequences out of 15000+200000
  5158 words of font info for 19 fonts, out of 3000000 for 9000
- 957 hyphenation exceptions out of 8191
- 38i,7n,24p,308b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr
-/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/l
-ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on frequency_analysis.pdf (2 pages, 1159865 bytes).
+ 841 hyphenation exceptions out of 8191
+ 27i,7n,24p,453b,212s stack positions out of 5000i,500n,10000p,200000b,50000s
+<G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><G:/Tools/MikT
+ex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><G:/Tools/MikTex/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><G:/Tools/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on frequency_analysis.pdf (2 pages, 1107584 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

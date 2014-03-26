@@ -15,33 +15,29 @@ Our experiment simulate the replay attack. Using each distinct value in the doma
 \end{itemize}
 Hence the block cipher we use in nonce generation is AES, each nonce in the 1000 times tag generation is randomly generated. 
 We want to examine the distribution of distinct tag values for each distinct D block. 
+
+
+
+
+
+\subsection{The Results}
 \begin{figure}[htbp]
  \centering
- \includegraphics[scale=0.4]{./frequency/overall_frequency_spot.pdf}
+ \includegraphics[scale=0.6]{./frequency/pattern_no_mix_frequency_new.pdf}
  \caption{The tag value frequency diagram for all D blocks. Y axis expresses the frequency of tag values of a D value divided by the maximum frequecy}
- \label{fig:1 }
+ \label{frequency_plot }
 \end{figure} 
-
+\paragraph{The Frequency Diagram of D Values}
+The tag frequency diagram of all D values is expressed in Figure 1. From the figure we can see that the frequency of tag varies to different levels. Tag frequency of D values that none of its sub-block is expressed with blue circle; green triangle represent the tag frequency of D values which has a pattern sub-block; red "*" represents the tag frequency of D values whose both sub-blocks are formed by pattern. 
+Figure 2. enlarge a part of Figure 1 to help clarify the tag frequency of each D block. 
 \begin{figure}[htbp]
  \centering
  \includegraphics[scale=0.4]{./frequency/portion_bar.pdf}
  \caption{The tag value frequency diagram for a part of D blocks}
- \label{fig:2 }
+ \label{frequency_hist }
 \end{figure} 
+As analyzed before, the tag has more probability to collide under replay attack if each sub-block of D is formed by a pattern. From Fig 1 we can see that red spots have lowest value of frequency. When one of the sub-block is formed without pattern, the frequency values represent by green triangle reach a high value.
 
-
-\subsection{The Results}
-\paragraph{The Frequency Diagram of All D Values}
-The tag frequency diagram of all D values is expressed in Figure 1. From the figure we can see that the frequency of tag varies to different levels. Figure enlarge a part of Figure 1 to help clarify the tag frequency of each D block. 
-
-\begin{figure}[htbp]
- \centering
- \includegraphics[scale=0.4]{./frequency/pattern_frequency_spot.pdf}
- \caption{The tag value frequency diagram for D blocks formed by pattern sub-blocks. }
- \label{fig:3}
-\end{figure}
-\paragraph{The Frequency Diagram of D Values formed by Pattern Sub-blocks}
-As analyzed before, the tag has more probability to collide under replay attack if each sub-block of D is formed by a pattern. We found all the D values formed by two pattern sub-blocks. Figure 2 expresses the tag frequncy values of these D blocks.
-
-We can see that the tag frequency of all D blocks formed by pattern sub-blocks is small. These points on the Fig 3 exactly match the lowest points in Fig 1. 
+\paragraph{The no-pattern D values that result to low tag frequency}
+ 
 \end{document}
