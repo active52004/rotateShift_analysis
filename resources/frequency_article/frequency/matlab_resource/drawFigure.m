@@ -62,24 +62,30 @@ scatter(C,M1,5,'fill','g');
 %scatter(M(:,1),M(:,2)/MaxValue,5,'fill');
 %}
 
-ylim([0 1]);
+
 %xlabel('Decimal Value of Input Message Block');
 
 
-S = 4550:4650;
+S = 21998:22020;
 B_S = dec2bin(S);
-len=length(S)
-B_S(1,:)
-bar(S,M(S,2)/MaxValue);
 
+%B_S(1,:)
 
-s_1=S(1):10:S(length(S));
+bar(S,M(S+1,2)/MaxValue)
+x=S(1);
+y=M(S(1)+1,2);
+%text(x,y,'\leftarrow0101010111101110');
+%set the x axis
+
+s_1=S(1):5:S(length(S));
 bs1=dec2bin(s_1);
 set(gca,'XTick',s_1,'XTickLabel',bs1);
 h = gca;
 rotateticklabel(gca,'x',20);
+ylim([0 1]);
 
 ylabel('No. of Distinct Tags/ Max No. of Distinct Tags');
+
 
 
 
