@@ -78,7 +78,7 @@ y=M(S(1)+1,2);
 %set the x axis
 
 s_1=S(1):5:S(length(S));
-bs1=dec2bin(s_1);
+bs1=dec2bin(s_1,16);
 set(gca,'XTick',s_1,'XTickLabel',bs1);
 h = gca;
 rotateticklabel(gca,'x',20);
